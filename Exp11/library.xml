@@ -13,7 +13,7 @@
     </book>
 
     <book>
-        <name>Internet & World Wide Web</name>
+        <name>Internet &amp; World Wide Web</name>
         <writer>Ditel</writer>
         <press>Pearson Education</press>
         <vol>3rd Edition</vol>
@@ -43,4 +43,5 @@
         <vol>8th Edition</vol>
         <cost>300</cost>
     </book>
+
 </library>
