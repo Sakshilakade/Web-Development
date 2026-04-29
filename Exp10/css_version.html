@@ -1,0 +1,234 @@
+<!-- Sakshi Sanjay Lakade Resume -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Resume</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --main: #0f172a;
+            --highlight: #ec4899;
+            --soft: #fce7f3;
+            --text: #1f2937;
+            --bg: #fdf2f8;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .top-bar {
+            background: var(--highlight);
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-size: 0.85rem;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .left {
+            width: 35%;
+            background: var(--main);
+            color: white;
+            padding: 30px;
+        }
+
+        .right {
+            width: 65%;
+            padding: 40px;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .role {
+            color: var(--highlight);
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .section {
+            margin-top: 30px;
+        }
+
+        .section h3 {
+            border-bottom: 2px solid var(--highlight);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 18px;
+        }
+
+        .contact li {
+            list-style: none;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .contact i {
+            margin-right: 8px;
+            color: var(--highlight);
+        }
+
+        .skill {
+            margin-bottom: 12px;
+        }
+
+        .bar {
+            height: 6px;
+            background: #475569;
+            border-radius: 10px;
+        }
+
+        .fill {
+            height: 100%;
+            background: var(--highlight);
+        }
+
+        .edu-item, .proj-item {
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+            }
+            .left, .right {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="top-bar">
+    Sakshi Sanjay Lakade
+</div>
+
+<div class="container">
+
+    <!-- LEFT SIDE -->
+    <div class="left">
+        <div class="avatar">
+            <i class="fas fa-user"></i>
+        </div>
+
+        <div class="section">
+            <h3>Contact</h3>
+            <ul class="contact">
+                <li><i class="fas fa-envelope"></i> sakshilakade9@gmail.com</li>
+                <li><i class="fas fa-phone"></i> +91 XXXXX XXXXX</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Skills</h3>
+
+            <div class="skill">HTML
+                <div class="bar"><div class="fill" style="width:90%"></div></div>
+            </div>
+
+            <div class="skill">CSS
+                <div class="bar"><div class="fill" style="width:85%"></div></div>
+            </div>
+
+            <div class="skill">UI/UX Design
+                <div class="bar"><div class="fill" style="width:80%"></div></div>
+            </div>
+
+            <div class="skill">Wireframing
+                <div class="bar"><div class="fill" style="width:75%"></div></div>
+            </div>
+
+        </div>
+
+        <div class="section">
+            <h3>Languages</h3>
+            <ul class="contact">
+                <li>English</li>
+                <li>Hindi</li>
+                <li>Marathi</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right">
+
+        <h1>Sakshi Lakade</h1>
+        <div class="role">Aspiring UI/UX Designer</div>
+
+        <div class="section">
+            <h3>About Me</h3>
+            <p>I am a Computer Science Engineering student with a strong interest in UI/UX design. I enjoy creating clean, user-friendly interfaces and improving user experiences through thoughtful design.</p>
+        </div>
+
+        <div class="section">
+            <h3>Education</h3>
+
+            <div class="edu-item">
+                <strong>B.Tech in Computer Science Engineering</strong>
+            </div>
+
+            <div class="edu-item">
+                Class 12 - Maharashtra Board
+            </div>
+
+            <div class="edu-item">
+                Class 10 - ICSE Board
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Projects</h3>
+
+            <div class="proj-item">
+                Portfolio Website – Designed a personal portfolio focusing on UI layout and responsiveness.
+            </div>
+
+            <div class="proj-item">
+                Student Form UI – Created a clean and simple user interface for data entry.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
