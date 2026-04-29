@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="exam_style.xsl"?>
+
+<results>
+  <candidate id="101">
+    <name>Rahul Sharma</name>
+    <subject>Maths</subject>
+    <grade>A</grade>
+    <score>88</score>
+  </candidate>
+
+  <candidate id="102">
+    <name>Pooja Verma</name>
+    <subject>Science</subject>
+    <grade>A+</grade>
+    <score>96</score>
+  </candidate>
+
+  <candidate id="103">
+    <name>Amit Patil</name>
+    <subject>English</subject>
+    <grade>B</grade>
+    <score>72</score>
+  </candidate>
+
+  <candidate id="104">
+    <name>Sneha Joshi</name>
+    <subject>Computer</subject>
+    <grade>A+</grade>
+    <score>91</score>
+  </candidate>
+</results>
