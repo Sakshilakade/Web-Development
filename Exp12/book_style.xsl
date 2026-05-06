@@ -3,62 +3,38 @@
 <xsl:stylesheet version="1.0"
 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-<xsl:output method="html" indent="yes"/>
-
 <xsl:template match="/">
 
 <html>
 <head>
-  <title>Book Library</title>
-
-  <style>
-    body {
-      font-family: Verdana;
-      background-color: #f9f9f9;
-    }
-    table {
-      border-collapse: collapse;
-      width: 75%;
-      margin: auto;
-    }
-    th {
-      background-color: #3f51b5;
-      color: white;
-      padding: 10px;
-    }
-    td {
-      padding: 8px;
-      text-align: center;
-    }
-    tr:nth-child(even) {
-      background-color: #e6e6e6;
-    }
-  </style>
-
+    <title>Library Books</title>
 </head>
 
-<body>
+<body style="font-family:Arial;">
 
-<h2 style="text-align:center;">Library Book Details</h2>
+<h2 style="text-align:center;">📚 Library Book Details (XSLT)</h2>
 
-<table border="1">
-  <tr>
+<table border="1" cellpadding="10" cellspacing="0" style="margin:auto;">
+
+<tr style="background:#ff6b9a; color:white;">
     <th>Title</th>
     <th>Author</th>
+    <th>Country</th>
     <th>Year</th>
     <th>Price</th>
-  </tr>
+</tr>
 
-  <xsl:for-each select="library/book">
-    <xsl:sort select="price" data-type="number"/>
+<xsl:for-each select="library/book">
 
-    <tr>
-      <td><xsl:value-of select="title"/></td>
-      <td><xsl:value-of select="author"/></td>
-      <td><xsl:value-of select="year"/></td>
-      <td><xsl:value-of select="price"/></td>
-    </tr>
-  </xsl:for-each>
+<tr>
+    <td><xsl:value-of select="title"/></td>
+    <td><xsl:value-of select="author"/></td>
+    <td><xsl:value-of select="country"/></td>
+    <td><xsl:value-of select="year"/></td>
+    <td><xsl:value-of select="price"/></td>
+</tr>
+
+</xsl:for-each>
 
 </table>
 
@@ -66,4 +42,5 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 </html>
 
 </xsl:template>
+
 </xsl:stylesheet>

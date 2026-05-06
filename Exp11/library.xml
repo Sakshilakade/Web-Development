@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css" href="style.css"?>
+<?xml-stylesheet type="text/css" href="design.css"?>
 
 <library>
-    <header>Geeks Library Collection</header>
+
+    <header>📚 Library of Books</header>
 
     <book>
         <name>Web Programming Basics</name>
         <writer>Chris Bates</writer>
         <press>Wiley Publications</press>
         <vol>3rd Edition</vol>
-        <cost>300</cost>
     </book>
 
     <book>
@@ -17,7 +17,6 @@
         <writer>Ditel</writer>
         <press>Pearson Education</press>
         <vol>3rd Edition</vol>
-        <cost>400</cost>
     </book>
 
     <book>
@@ -25,7 +24,6 @@
         <writer>Forouzan</writer>
         <press>McGraw Hill</press>
         <vol>5th Edition</vol>
-        <cost>700</cost>
     </book>
 
     <book>
@@ -33,7 +31,6 @@
         <writer>Navathe</writer>
         <press>Oxford Press</press>
         <vol>5th Edition</vol>
-        <cost>600</cost>
     </book>
 
     <book>
@@ -41,7 +38,6 @@
         <writer>Subrata Das</writer>
         <press>Oxford Press</press>
         <vol>8th Edition</vol>
-        <cost>300</cost>
     </book>
 
 </library>

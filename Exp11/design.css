@@ -1,39 +1,39 @@
 library {
     display: block;
-    background-color: #ffd1dc;
-    color: #222;
-    width: 100%;
-    padding: 10px;
-    font-family: Arial, sans-serif;
+    background: #f5f7ff;
+    padding: 15px;
+    font-family: Arial;
 }
 
 header {
     display: block;
-    font-size: 38px;
-    color: darkgreen;
-    background-color: lightblue;
+    font-size: 32px;
     text-align: center;
-    padding: 10px;
-    margin-bottom: 15px;
+    background: #4facfe;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 book {
     display: block;
     margin: 10px;
-    padding: 10px;
-    border: 1px solid #ffffff;
-    background-color: #fff5f8;
+    padding: 12px;
+    background: #ffffff;
+    border-left: 5px solid #ff6b9a;
+    border-radius: 8px;
 }
 
 name {
     display: block;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
-    color: #333;
+    color: #222;
 }
 
-writer, press, vol, cost {
+writer, press, vol {
     display: block;
-    font-size: 16px;
+    color: #444;
     margin-left: 10px;
 }

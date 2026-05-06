@@ -1,154 +1,291 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Web Development Experiments</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Development Lab</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ffd6e8, #d6e6ff);
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-        h1 {
-            text-align: center;
-            background: #ffffffaa;
-            padding: 15px;
-            border-radius: 12px;
-            color: #444;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+<style>
+:root {
+  --blue: #99CDD8;
+  --light: #EAE6E3;
+  --beige: #F1D6B0;
+  --peach: #F2C1B2;
+  --sage: #D7D3CA;
+  --dark: #657166;
 
-        ol {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            background: #ffffffcc;
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-        }
+  --text: #111;
+  --muted: #6b7280;
+}
 
-        li {
-            margin: 10px 0;
-            padding: 8px;
-        }
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #f8fafc, #eae6e3);
+  color: var(--text);
+}
 
-        a {
-            text-decoration: none;
-            color: #4a4a4a;
-            padding: 6px 10px;
-            border-radius: 8px;
-            display: inline-block;
-            transition: 0.3s;
-        }
+/* FADE */
+.fade {
+  animation: fadeIn 0.6s ease;
+}
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
 
-        /* 🎨 Manual color control */
-        .pink {
-            background: #ffe0f0;
-        }
+/* HOME */
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-        .blue {
-            background: #cfe8ff;
-        }
+.card {
+  max-width: 900px;
+  padding: 50px;
+}
 
-        a:hover {
-            background: #ffb6d5;
-            color: white;
-            transform: scale(1.05);
-        }
+/* TITLES */
+h1 {
+  font-size: 58px;
+  margin: 0;
+  font-weight: 800;
+}
 
-        ul {
-            margin-top: 8px;
-        }
-    </style>
+h2 {
+  font-size: 48px;
+  margin: 0;
+  color: var(--blue);
+}
 
+/* DESCRIPTION */
+.desc {
+  margin-top: 20px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* PROFILE BOX (ENLARGED) */
+.profile {
+  margin-top: 30px;
+  padding: 28px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(12px);
+  font-size: 16px;
+  line-height: 1.8;
+  transition: 0.3s;
+}
+
+.profile:hover {
+  transform: translateY(-4px);
+}
+
+/* BUTTON */
+.enter-btn {
+  margin-top: 30px;
+  padding: 15px 30px;
+  border-radius: 999px;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.enter-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: var(--dark);
+}
+
+/* EXPERIMENT PAGE */
+#experiments {
+  display: none;
+  padding: 50px 20px;
+}
+
+/* GRID */
+.grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* CARDS */
+.exp-card {
+  padding: 22px;
+  border-radius: 16px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  transition: 0.3s;
+  position: relative;
+}
+
+.exp-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0,0,0,0.08);
+}
+
+/* COLOR STRIP FOR ALL */
+.exp-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  border-radius: 16px 16px 0 0;
+}
+
+/* APPLY COLORS IN LOOP STYLE */
+.exp-card:nth-child(6n+1)::before { background: var(--blue); }
+.exp-card:nth-child(6n+2)::before { background: var(--light); }
+.exp-card:nth-child(6n+3)::before { background: var(--beige); }
+.exp-card:nth-child(6n+4)::before { background: var(--peach); }
+.exp-card:nth-child(6n+5)::before { background: var(--sage); }
+.exp-card:nth-child(6n+6)::before { background: var(--dark); }
+
+/* TEXT */
+.exp-card h3 {
+  margin: 0 0 10px;
+}
+
+.exp-card p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+/* LINKS */
+.links a {
+  display: inline-block;
+  margin: 4px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 13px;
+  background: #f1f5f9;
+  color: black;
+  transition: 0.3s;
+}
+
+.links a:hover {
+  background: var(--blue);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* BACK BUTTON */
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 8px 14px;
+  border: none;
+  background: white;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+</style>
 </head>
 
 <body>
 
-    <h1> Web Development Lab Experiments </h1>
+<!-- HOME -->
+<div id="home" class="wrapper fade">
+  <div class="card">
+    <h1>Web Development</h1>
+    <h2>Experiments Hub</h2>
 
-    <ol>
+    <div class="desc">
+      A collection of 13 structured lab experiments covering HTML, CSS, XML, and XSLT.
+    </div>
 
-        <li><a class="pink" href="Exp1-Web-Technology-Basics.html">Experiment 1 - Web Technology Basics</a></li>
+    <div class="profile">
+      <div><strong>Name:</strong> Sakshi Sanjay Lakade</div>
+      <div><strong>Roll No:</strong> 14</div>
+      <div><strong>Division:</strong> CSE A</div>
+      <div><strong>Batch:</strong> S1</div>
+      <div><strong>Guide:</strong> S. S. Kore</div>
+    </div>
 
-        <li><a class="pink" href="Exp2-Static-Webpage.html">Experiment 2 - Static Webpage</a></li>
+    <button class="enter-btn" onclick="enterLab()">Enter Lab →</button>
+  </div>
+</div>
 
-        <li><a class="blue" href="Exp3-Text-Formatting-tags.html">Experiment 3 - Text Formatting Tags</a></li>
+<!-- EXPERIMENTS -->
+<div id="experiments" class="fade">
 
-        <li><a class="pink" href="Exp4-List-Tags.html">Experiment 4 - List Tags</a></li>
+<button class="back-btn" onclick="goBack()">← Back</button>
 
-        <li>
-            Experiment 5
-            <ul>
-                <li><a class="blue" href="Exp5-Image-Tags/Exp5-Image-Tags.html">Image Tags</a></li>
-                <li><a class="blue" href="Exp5-Image-Tags/imagemap.html">Image Map</a></li>
-            </ul>
-        </li>
+<div class="grid">
 
-        <li>
-            Experiment 6
-            <ul>
-                <li><a class="pink" href="Exp6-frames/Exp6 frames.html">Frames Page</a></li>
-                <li><a class="blue" href="Exp6-frames/frameset.html">Frameset</a></li>
-            </ul>
-        </li>
+<!-- SAME CARDS (unchanged) -->
 
-        <li><a class="blue" href="Exp7-links.html">Experiment 7 - Links</a></li>
+<div class="exp-card"><h3>Experiment 1</h3><p>Study of Web Technology basics along with different web technology languages.</p><div class="links"><a href="Exp1.html">Open</a></div></div>
 
-        <li>
-            Experiment 8
-            <ul>
-                <li><a class="pink" href="Exp8-Table/Exp8-Table.html">Table</a></li>
-                <li><a class="blue" href="Exp8-Table/Exp8-timetable.html">Timetable</a></li>
-            </ul>
-        </li>
+<div class="exp-card"><h3>Experiment 2</h3><p>Create static web pages using HTML tags.</p><div class="links"><a href="Exp2.html">Open</a></div></div>
 
-        <li>
-            Experiment 9
-            <ul>
-                <li><a class="pink" href="Exp9/basic.html">Basic HTML</a></li>
-                <li><a class="blue" href="Exp9/css_version.html">CSS Version</a></li>
-            </ul>
-        </li>
+<div class="exp-card"><h3>Experiment 3</h3><p>Create a web page demonstrating text formatting tags.</p><div class="links"><a href="Exp3.html">Open</a></div></div>
 
-        <li>
-            Experiment 10
-            <ul>
-                <li><a class="blue" href="Exp10/basic.html">Basic HTML</a></li>
-                <li><a class="pink" href="Exp10/css_version.html">CSS Version</a></li>
-            </ul>
-        </li>
+<div class="exp-card"><h3>Experiment 4</h3><p>Create a webpage using list tags in HTML.</p><div class="links"><a href="Exp4.html">Open</a></div></div>
 
-        <li>
-            Experiment 11
-            <ul>
-                <li><a class="pink" href="Exp11/library.xml">XML File</a></li>
-                <li><a class="blue" href="Exp11/design.css">CSS Design</a></li>
-            </ul>
-        </li>
+<div class="exp-card"><h3>Experiment 5</h3><p>Create webpage including images using HTML.</p><div class="links"><a href="Exp5.html">Open</a></div></div>
 
-        <li>
-            Experiment 12
-            <ul>
-                <li><a class="blue" href="Exp12/book_library.xml">XML File</a></li>
-                <li><a class="pink" href="Exp12/book_style.xsl">XSL Stylesheet</a></li>
-                <li><a class="blue" href="Exp12/book_output.html">Output</a></li>
-            </ul>
-        </li>
+<div class="exp-card"><h3>Experiment 6</h3><p>Create webpage using frames in HTML.</p><div class="links"><a href="Exp6/">Open</a></div></div>
 
-        <li>
-            Experiment 13
-            <ul>
-                <li><a class="pink" href="Exp13/exam_records.xml">XML File</a></li>
-                <li><a class="blue" href="Exp13/exam_style.xsl">XSL Stylesheet</a></li>
-                <li><a class="pink" href="Exp13/exam_output.html">Output</a></li>
-            </ul>
-        </li>
+<div class="exp-card"><h3>Experiment 7</h3><p>Demonstrate the use of link tags in HTML.</p><div class="links"><a href="Exp7.html">Open</a></div></div>
 
-    </ol>
+<div class="exp-card"><h3>Experiment 8</h3><p>Demonstrate list tags in HTML.</p><div class="links"><a href="Exp8/Exp8-Table.html">Table</a><a href="Exp8/Exp8-timetable.html">Timetable</a></div></div>
+
+<div class="exp-card"><h3>Experiment 9</h3><p>Create employee registration form using HTML.</p><div class="links"><a href="Exp9/basic.html">Basic</a><a href="Exp9/css_version.html">CSS</a></div></div>
+
+<div class="exp-card"><h3>Experiment 10</h3><p>Create resume webpage using HTML.</p><div class="links"><a href="Exp10/basic.html">Basic</a><a href="Exp10/css_version.html">CSS</a></div></div>
+
+<div class="exp-card"><h3>Experiment 11</h3><p>Study and implementation of XML.</p><div class="links"><a href="Exp11/library.xml">View</a></div></div>
+
+<div class="exp-card"><h3>Experiment 12</h3><p>Transform XML using XSLT.</p><div class="links"><a href="Exp12/book_library.xml">View</a></div></div>
+
+<div class="exp-card"><h3>Experiment 13</h3><p>Student application using XSLT and conditions.</p><div class="links"><a href="Exp13/exam_records.xml">View</a></div></div>
+
+</div>
+</div>
+
+<script>
+// Handle direct navigation to #experiments
+window.addEventListener("load", () => {
+  if (window.location.hash === "#experiments") {
+    showExperiments();
+  }
+});
+
+// Show experiments
+function showExperiments() {
+  document.getElementById("home").style.display = "none";
+  document.getElementById("experiments").style.display = "block";
+}
+
+// Update Enter Lab
+function enterLab() {
+  showExperiments();
+  window.location.hash = "experiments"; // IMPORTANT
+}
+
+// Back button (inside index)
+function goBack() {
+  document.getElementById("experiments").style.display = "none";
+  document.getElementById("home").style.display = "flex";
+  window.location.hash = "";
+}
+</script>
 
 </body>
 </html>
